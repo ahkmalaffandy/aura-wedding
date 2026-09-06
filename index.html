@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Celebration | Wedding & Event Organizer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#C5A880',
+                            dark: '#A68A64',
+                            light: '#E6D3B8'
+                        },
+                        cream: '#FDFBF7',
+                        'soft-white': '#FFFFFF',
+                        'neutral-gray': {
+                            DEFAULT: '#4B5563',
+                            light: '#9CA3AF',
+                            dark: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        
+        /* Custom styling for inputs */
+        /* .input-field {
+            @apply w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-gold focus:border-gold transition-colors font-sans text-sm;
+        } */
+        
+        /* Glassmorphism for hero */
+        .glass {
+            background: rgba(253, 251, 247, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="font-sans text-neutral-gray bg-cream antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="font-serif text-2xl font-bold text-neutral-gray-dark tracking-wide">
+                        Aura<span class="text-gold">.</span>
+                    </span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beranda" class="text-sm font-medium hover:text-gold transition-colors">Beranda</a>
+                    <a href="#tentang" class="text-sm font-medium hover:text-gold transition-colors">Tentang Kami</a>
+                    <a href="#layanan" class="text-sm font-medium hover:text-gold transition-colors">Layanan</a>
+                    <a href="#paket" class="text-sm font-medium hover:text-gold transition-colors">Paket</a>
+                    <a href="#galeri" class="text-sm font-medium hover:text-gold transition-colors">Galeri</a>
+                    <a href="#kontak" class="px-5 py-2.5 bg-gold text-white text-sm font-medium rounded-full hover:bg-gold-dark transition-colors shadow-sm">
+                        Konsultasi
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-neutral-gray hover:text-gold focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#beranda" class="block px-3 py-2 text-base font-medium hover:bg-cream hover:text-gold rounded-md">Beranda</a>
+                <a href="#tentang" class="block px-3 py-2 text-base font-medium hover:bg-cream hover:text-gold rounded-md">Tentang Kami</a>
+                <a href="#layanan" class="block px-3 py-2 text-base font-medium hover:bg-cream hover:text-gold rounded-md">Layanan</a>
+                <a href="#paket" class="block px-3 py-2 text-base font-medium hover:bg-cream hover:text-gold rounded-md">Paket</a>
+                <a href="#galeri" class="block px-3 py-2 text-base font-medium hover:bg-cream hover:text-gold rounded-md">Galeri</a>
+                <a href="#kontak" class="block px-3 py-2 text-base font-medium text-gold font-semibold">Konsultasi Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section id="beranda" class="relative h-screen flex items-center justify-center">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat"></div>
+        <div class="absolute inset-0 bg-neutral-gray-dark/50"></div> <!-- Dark overlay for readability -->
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="block text-gold-light tracking-[0.2em] text-xs md:text-sm uppercase mb-4 font-semibold">Event & Wedding Organizer</span>
+            <h1 class="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-bold leading-tight mb-6">
+                Mewujudkan Momen Impian Anda <br/><span class="italic font-light">Tanpa Stres</span>
+            </h1>
+            <p class="text-gray-200 text-base md:text-lg lg:text-xl font-light mb-10 max-w-2xl mx-auto">
+                Percayakan perayaan spesial Anda pada tim profesional kami. Kami merangkai keanggunan, detail, dan cinta dalam satu momen yang tak terlupakan.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#kontak" class="px-8 py-4 bg-gold text-white rounded-full font-medium hover:bg-gold-dark transition-all transform hover:-translate-y-1 shadow-lg flex items-center gap-2">
+                    Konsultasi Gratis <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#tentang" class="px-8 py-4 bg-transparent border border-white text-white rounded-full font-medium hover:bg-white/10 transition-all">
+                    Kenali Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Tentang Kami (About Us) -->
+    <section id="tentang" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <!-- Image -->
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gold/20 transform translate-x-4 translate-y-4 rounded-lg transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop" alt="Tim Aura Celebration" class="relative z-10 rounded-lg shadow-xl object-cover h-[500px] w-full">
+                </div>
+                <!-- Text -->
+                <div>
+                    <h2 class="text-gold tracking-[0.1em] text-sm font-semibold uppercase mb-3">Tentang Kami</h2>
+                    <h3 class="font-serif text-3xl md:text-4xl text-neutral-gray-dark font-bold mb-6">
+                        Merangkai Cerita di Setiap <span class="italic text-gold">Perayaan</span>
+                    </h3>
+                    <p class="text-neutral-gray leading-relaxed mb-6">
+                        Aura Celebration lahir dari sebuah dedikasi untuk menciptakan momen yang bermakna. Selama lebih dari 7 tahun, kami telah menjadi saksi dan kreator di balik ratusan acara sukses, mulai dari pernikahan intim hingga perhelatan korporat berskala besar.
+                    </p>
+                    <p class="text-neutral-gray leading-relaxed mb-8">
+                        Visi kami sederhana: mengambil beban perencanaan dari pundak Anda, dan menggantinya dengan pengalaman perayaan yang damai, estetis, dan berjalan sempurna. Karena setiap cerita pantas dirayakan dengan keanggunan.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 text-center border-t border-gray-200 pt-8">
+                        <div>
+                            <p class="font-serif text-3xl text-gold font-bold mb-1">300+</p>
+                            <p class="text-xs text-neutral-gray-light uppercase tracking-wide">Acara Sukses</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-3xl text-gold font-bold mb-1">7</p>
+                            <p class="text-xs text-neutral-gray-light uppercase tracking-wide">Tahun Pengalaman</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-3xl text-gold font-bold mb-1">100%</p>
+                            <p class="text-xs text-neutral-gray-light uppercase tracking-wide">Klien Puas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Layanan Kami (Services) -->
+    <section id="layanan" class="py-24 bg-soft-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-gold tracking-[0.1em] text-sm font-semibold uppercase mb-3">Layanan Kami</h2>
+                <h3 class="font-serif text-3xl md:text-4xl text-neutral-gray-dark font-bold mb-4">Layanan Perencanaan Penuh</h3>
+                <p class="text-neutral-gray">Kami menyediakan solusi komprehensif untuk berbagai tipe perayaan dengan sentuhan personal yang elegan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group bg-cream p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-gold/20 text-gold group-hover:scale-110 transition-transform">
+                        <i data-lucide="gem" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-serif text-xl text-neutral-gray-dark font-bold mb-3">Wedding Planning</h4>
+                    <p class="text-neutral-gray text-sm leading-relaxed mb-4">
+                        Dari pencarian venue, konsep dekorasi, hingga koordinasi hari H. Kami mewujudkan pernikahan impian tanpa cacat untuk Anda.
+                    </p>
+                    <a href="#kontak" class="text-gold font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Pelajari Lebih Lanjut <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group bg-cream p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-gold/20 text-gold group-hover:scale-110 transition-transform">
+                        <i data-lucide="briefcase" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-serif text-xl text-neutral-gray-dark font-bold mb-3">Corporate Event</h4>
+                    <p class="text-neutral-gray text-sm leading-relaxed mb-4">
+                        Perencanaan profesional untuk gala dinner, peluncuran produk, hingga gathering perusahaan dengan standar eksekutif.
+                    </p>
+                    <a href="#kontak" class="text-gold font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Pelajari Lebih Lanjut <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-cream p-10 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm border border-gold/20 text-gold group-hover:scale-110 transition-transform">
+                        <i data-lucide="glass-water" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-serif text-xl text-neutral-gray-dark font-bold mb-3">Private Party</h4>
+                    <p class="text-neutral-gray text-sm leading-relaxed mb-4">
+                        Perayaan ulang tahun, bridal shower, atau perayaan intim lainnya yang didesain secara unik dan penuh privasi.
+                    </p>
+                    <a href="#kontak" class="text-gold font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Pelajari Lebih Lanjut <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Paket & Fasilitas (Packages) -->
+    <section id="paket" class="py-24 bg-cream relative">
+        <div class="absolute top-0 left-0 w-full h-64 bg-soft-white rounded-b-[100px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-gold tracking-[0.1em] text-sm font-semibold uppercase mb-3">Pilihan Paket</h2>
+                <h3 class="font-serif text-3xl md:text-4xl text-neutral-gray-dark font-bold mb-4">Fasilitas Transparan</h3>
+                <p class="text-neutral-gray">Pilih paket yang paling sesuai dengan visi dan skala acara Anda. Fleksibel dan dapat disesuaikan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <!-- Package 1: Silver -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                    <h4 class="font-serif text-2xl text-neutral-gray-dark font-bold mb-2">Silver</h4>
+                    <p class="text-sm text-neutral-gray mb-6">Paket esensial untuk pernikahan intim.</p>
+                    <div class="text-3xl font-bold text-neutral-gray-dark mb-8">Mulai 25Jt</div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Konsultasi Konsep Dasar</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">WO Hari H (5 Crew)</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Dekorasi Standar (Pelaminan & Lorong)</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Dokumentasi Dasar (1 Foto, 1 Video)</span></li>
+                        <li class="flex items-start gap-3 text-gray-400"><i data-lucide="x" class="w-5 h-5 flex-shrink-0"></i><span class="text-sm line-through">Manajemen Vendor Penuh</span></li>
+                    </ul>
+                    <a href="#kontak" class="block w-full py-3 px-4 border border-gold text-gold text-center rounded-full font-medium hover:bg-gold hover:text-white transition-colors">Pilih Paket</a>
+                </div>
+
+                <!-- Package 2: Gold (Highlight) -->
+                <div class="bg-neutral-gray-dark text-white p-10 rounded-2xl shadow-2xl relative transform lg:scale-105 z-10 border border-gold/30">
+                    <div class="absolute top-0 right-0 bg-gold text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl uppercase tracking-wider">
+                        Terpopuler
+                    </div>
+                    <h4 class="font-serif text-2xl text-white font-bold mb-2">Gold</h4>
+                    <p class="text-sm text-gray-300 mb-6">Pilihan favorit untuk perayaan sempurna.</p>
+                    <div class="text-3xl font-bold text-gold mb-8">Mulai 65Jt</div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Full Wedding Planning (3 Bulan)</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">WO Hari H (8 Crew)</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Dekorasi Premium & Bunga Asli</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Dokumentasi Lengkap & Sinematik</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Hiburan (Akustik Band & MC)</span></li>
+                    </ul>
+                    <a href="#kontak" class="block w-full py-3 px-4 bg-gold text-white text-center rounded-full font-medium hover:bg-gold-light hover:text-neutral-gray-dark transition-colors">Pilih Paket</a>
+                </div>
+
+                <!-- Package 3: Platinum -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative">
+                    <h4 class="font-serif text-2xl text-neutral-gray-dark font-bold mb-2">Platinum</h4>
+                    <p class="text-sm text-neutral-gray mb-6">Kemewahan tanpa batas untuk Anda.</p>
+                    <div class="text-3xl font-bold text-neutral-gray-dark mb-8">Mulai 150Jt</div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Full Planning & Desain Eksklusif (6 Bln)</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">WO Hari H (15+ Crew VIP)</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Dekorasi Custom & Lighting Spektakuler</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Dokumentasi Multi-Kamera & Drone</span></li>
+                        <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-gold flex-shrink-0"></i><span class="text-sm">Artis / Full Orchestra Band</span></li>
+                    </ul>
+                    <a href="#kontak" class="block w-full py-3 px-4 border border-gold text-gold text-center rounded-full font-medium hover:bg-gold hover:text-white transition-colors">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Galeri Portfolio -->
+    <section id="galeri" class="py-24 bg-soft-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-xl">
+                    <h2 class="text-gold tracking-[0.1em] text-sm font-semibold uppercase mb-3">Portfolio Kami</h2>
+                    <h3 class="font-serif text-3xl md:text-4xl text-neutral-gray-dark font-bold">Momen Estetik yang Terabadikan</h3>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gold flex items-center gap-2 hover:gap-3 transition-all font-medium">Lihat Semua <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+
+            <!-- Image Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <!-- Item 1 (Large) -->
+                <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop" alt="Pernikahan Elegan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=2162&auto=format&fit=crop" alt="Dekorasi Meja" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Item 3 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop" alt="Cincin Pernikahan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Item 4 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop" alt="Bunga Dekorasi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <!-- Item 5 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070&auto=format&fit=crop" alt="Momen Pengantin" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimoni Klien -->
+    <section class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <i data-lucide="quote" class="w-10 h-10 text-gold/30 mx-auto mb-4"></i>
+                <h3 class="font-serif text-3xl md:text-4xl text-neutral-gray-dark font-bold mb-4">Kisah Mereka</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-gold mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-neutral-gray italic mb-6 text-sm leading-relaxed">
+                        "Sangat profesional! Aura Celebration benar-benar menghilangkan semua stres kami menjelang hari H. Detail dekorasinya jauh melebihi ekspektasi kami."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Amanda" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bold text-neutral-gray-dark text-sm">Amanda & Rizky</p>
+                            <p class="text-xs text-neutral-gray-light">Pernikahan, Jakarta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-gold mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-neutral-gray italic mb-6 text-sm leading-relaxed">
+                        "Acara gala dinner perusahaan kami berjalan sangat mulus berkat tim Aura. Konsep elegan yang ditawarkan sangat cocok dengan citra brand kami."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="Budi" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bold text-neutral-gray-dark text-sm">Budi Santoso</p>
+                            <p class="text-xs text-neutral-gray-light">CEO TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-gold mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-neutral-gray italic mb-6 text-sm leading-relaxed">
+                        "Tim WO terbaik yang pernah saya temui. Ramah, responsif, dan punya selera desain yang sangat bagus. Private party ulang tahun saya jadi sangat epik!"
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-gray-100 pt-4">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?img=5" alt="Clara" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-bold text-neutral-gray-dark text-sm">Clara Wijaya</p>
+                            <p class="text-xs text-neutral-gray-light">Private Party, Bali</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Kontak & Footer -->
+    <section id="kontak" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-cream rounded-3xl overflow-hidden shadow-lg border border-gold/20 flex flex-col lg:flex-row">
+                
+                <!-- Contact Form -->
+                <div class="p-10 md:p-16 lg:w-3/5">
+                    <h2 class="font-serif text-3xl font-bold text-neutral-gray-dark mb-2">Mari Rencanakan Momen Anda</h2>
+                    <p class="text-neutral-gray mb-8 text-sm">Isi formulir di bawah ini untuk mendapatkan konsultasi gratis mengenai acara Anda.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-neutral-gray-dark mb-2 uppercase tracking-wide">Nama Lengkap</label>
+                                <input type="text" placeholder="John & Jane" class="input-field" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-neutral-gray-dark mb-2 uppercase tracking-wide">Nomor Telepon / WhatsApp</label>
+                                <input type="tel" placeholder="0812-xxxx-xxxx" class="input-field" required>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-neutral-gray-dark mb-2 uppercase tracking-wide">Tanggal Acara (Estimasi)</label>
+                                <input type="date" class="input-field" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-neutral-gray-dark mb-2 uppercase tracking-wide">Jenis Acara</label>
+                                <select class="input-field bg-white" required>
+                                    <option value="" disabled selected>Pilih Layanan</option>
+                                    <option value="wedding">Pernikahan</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="private">Private Party</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-neutral-gray-dark mb-2 uppercase tracking-wide">Pesan Singkat</label>
+                            <textarea rows="4" placeholder="Ceritakan sedikit tentang impian acara Anda..." class="input-field resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-neutral-gray-dark text-white py-4 rounded-md font-semibold hover:bg-black transition-colors flex items-center justify-center gap-2">
+                            Kirim Pesan <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Direct Contact Info -->
+                <div class="bg-neutral-gray-dark text-white p-10 md:p-16 lg:w-2/5 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-gold rounded-full opacity-10 blur-3xl"></div>
+                    
+                    <h3 class="font-serif text-2xl font-bold mb-8 relative z-10">Hubungi Langsung</h3>
+                    
+                    <div class="space-y-6 relative z-10 mb-12">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-gold flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm mb-1">Kantor Pusat</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed">Gedung Aura Lt. 3<br>Jl. Jend. Sudirman Kav. 21<br>Jakarta Selatan, 12920</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-6 h-6 text-gold flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-bold text-sm mb-1">Email</h4>
+                                <p class="text-gray-400 text-sm">hello@auracelebration.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/6281234567890" target="_blank" class="bg-[#25D366] hover:bg-[#20bd5a] text-white py-4 px-6 rounded-md font-semibold transition-colors flex items-center justify-center gap-3 relative z-10 shadow-lg">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i> Chat via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-gray-dark border-t border-gray-800 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <span class="font-serif text-2xl font-bold text-white tracking-wide block mb-2">
+                        Aura<span class="text-gold">.</span>
+                    </span>
+                    <p class="text-xs text-gray-500">© 2026 Aura Celebration. All rights reserved.</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                        <i data-lucide="youtube" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition-colors">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Modal (Hidden by default) -->
+    <div id="successModal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="bg-white p-8 rounded-xl shadow-2xl relative z-10 max-w-sm w-full text-center transform scale-95 transition-transform duration-300" id="modalContent">
+            <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check-circle" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-neutral-gray-dark mb-2">Pesan Terkirim!</h3>
+            <p class="text-neutral-gray text-sm mb-6">Terima kasih telah menghubungi kami. Tim Aura akan segera membalas pesan Anda maksimal dalam 1x24 jam.</p>
+            <button onclick="closeModal()" class="bg-gold text-white px-6 py-2 rounded-full font-medium hover:bg-gold-dark transition-colors w-full">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-sm');
+                navbar.classList.replace('bg-white/90', 'bg-white');
+            } else {
+                navbar.classList.remove('shadow-sm');
+                navbar.classList.replace('bg-white', 'bg-white/90');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission Logic
+        const contactForm = document.getElementById('contactForm');
+        const successModal = document.getElementById('successModal');
+        const modalContent = document.getElementById('modalContent');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate form submission
+            setTimeout(() => {
+                successModal.classList.remove('hidden');
+                // Trigger reflow
+                void successModal.offsetWidth;
+                successModal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                contactForm.reset();
+            }, 500);
+        });
+
+        function closeModal() {
+            successModal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                successModal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
